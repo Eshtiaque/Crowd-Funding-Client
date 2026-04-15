@@ -16,7 +16,7 @@ const Footer = () => {
 
         // fetch(`http://localhost:5000/campaigns`, {
 
-        fetch('https://crowdfunding-gamma.vercel.app/subscribers', {
+        fetch('http://localhost:5000/subscribers', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

@@ -10,7 +10,7 @@ const AllUsers = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const search = e.target.search.value;
-    axios.get(`https://crowdfunding-gamma.vercel.app/users/${search}`)
+    axios.get(`http://localhost:5000/users/${search}`)
       .then(result => setData(result));
   }
 
@@ -24,7 +24,7 @@ const AllUsers = () => {
       saveUser.role = 'admin';
     }
 
-    fetch(`https://crowdfunding-gamma.vercel.app/userAction/${id}`, {
+    fetch(`http://localhost:5000/userAction/${id}`, {
       method: "PATCH",
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const AllUsers = () => {
         console.log(result)
         if (result.modifiedCount > 0) {
           toast.success("modified successfully");
-          axios.get('https://crowdfunding-gamma.vercel.app/users')
+          axios.get('http://localhost:5000/users')
             .then(result => setData(result));
         }
       })
@@ -48,9 +48,9 @@ const AllUsers = () => {
       <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
         <h1 className="md:text-4xl text-4xl lg:text-4xl font-black text-[#130F49]">
           Total Users ({data?.data?.length})
-          <hr className="border-2 border-slate-300 mt-2"/>
+          <hr className="border-2 border-slate-300 mt-2" />
         </h1>
-        
+
         <div className="form-control mt-1">
           <div >
             <form className="input-group" onSubmit={handleSearch}>
@@ -99,7 +99,7 @@ const AllUsers = () => {
                 <th className="text-center">{count++}</th>
                 <td className="text-center">{data.name}</td>
                 <td className="text-center">{data.email}</td>
-                <td className="text-center">{data?.role === 'admin'? 'Admin' : 'User' || "User"}</td>
+                <td className="text-center">{data?.role === 'admin' ? 'Admin' : 'User' || "User"}</td>
                 <td className="text-center">
                   <button onClick={() => handleAction(data._id, data)} className="py-2 px-4 border rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 text-white font-semibold hover:bg-[#74df66]">Change Role</button>
                 </td>

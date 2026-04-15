@@ -8,7 +8,7 @@ const CampaignDetails = () => {
         const saveData = {
             status: 'approved',
         };
-        fetch(`https://crowdfunding-gamma.vercel.app/individualCampaign/${id}`, {
+        fetch(`http://localhost:5000/individualCampaign/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

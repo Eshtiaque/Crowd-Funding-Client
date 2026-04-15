@@ -1,18 +1,18 @@
 // import axios from 'axios';
-import  { useState } from 'react';
+import { useState } from 'react';
 import { useLoaderData } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 const ProjectDescription = () => {
-  const [data, ] = useState(useLoaderData());
+  const [data,] = useState(useLoaderData());
   const navigate = useNavigate();
- 
+
   const handleAction = (id) => {
 
     const saveUser = {
       status: "approved",
     }
-    fetch(`https://crowdfunding-gamma.vercel.app/blogsUpdate/${id}`, {
+    fetch(`http://localhost:5000/blogsUpdate/${id}`, {
       method: "PATCH",
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const ProjectDescription = () => {
               {data.status === "approved" ? 'Approved' : 'Approve'}
             </button>
           </div>
-        </div>      
+        </div>
       </div>
     </div>
   );

@@ -11,11 +11,11 @@ const Event = () => {
     const [loading, setLoading] = useState(true);
     console.log(loading);
 
-  
+
 
     useEffect(() => {
         setLoading(true)
-        fetch(`https://crowdfunding-gamma.vercel.app/individualEvent/${user?.email}`)
+        fetch(`http://localhost:5000/individualEvent/${user?.email}`)
             .then(result => result.json())
             .then(data => {
                 setevents(data)
@@ -23,7 +23,7 @@ const Event = () => {
             })
     }, [user])
 
-   
+
     console.log(events);
 
 
@@ -33,9 +33,9 @@ const Event = () => {
             <div className="flex flex-col md:flex-row gap-6 items-center justify-between mt-5">
                 <h1 className="md:text-4xl text-4xl font-black text-[#130F49]">
                     My events ({events.length})
-                    <hr  className="border-slate-400 border-b-[3px] w-[240px] mx-auto mt-3"/>
+                    <hr className="border-slate-400 border-b-[3px] w-[240px] mx-auto mt-3" />
                 </h1>
-               
+
                 <div className="flex flex-row">
                     {/* <FaBriefcase></FaBriefcase> */}
                     <Link to="/dashboard/userAddEvent"><MainButton text="Add event"> </MainButton></Link>

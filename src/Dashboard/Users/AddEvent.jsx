@@ -5,7 +5,7 @@ import useAuth from "../../hooks/useAuth";
 import { useRef } from "react";
 
 const AddEvent = () => {
-    const dateInputRef = useRef(null);
+  const dateInputRef = useRef(null);
   const { user } = useAuth();
   const navigate = useNavigate()
   const handleSubmit = e => {
@@ -22,7 +22,7 @@ const AddEvent = () => {
     const publisher_name = form.publisher_name.value;
 
     const saveUser = { name, email, image, title, description, publish_date, publisher_image, publisher_name, status: 'pending' };
-    fetch('https://crowdfunding-gamma.vercel.app/eventAdd', {
+    fetch('http://localhost:5000/eventAdd', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(saveUser)
@@ -39,12 +39,12 @@ const AddEvent = () => {
 
   return (
     <div className=" 
-      w-3/4 text-black">      
-       <div className="text-center mt-24">
+      w-3/4 text-black">
+      <div className="text-center mt-24">
         <h2 className="text-3xl  font-black text-[#130F49]">Submit Event&apos;s</h2>
         <hr className="border-b-[3px] w-[106px] mt-1 border-blue-600 mx-auto" />
       </div>
-      
+
       <form className="card  shadow-2xl p-10 mx-auto text-base leading-6 space-y-6 sm:text-lg sm:leading-7 overflow-hidden mb-16 mt-8 bg-white" onSubmit={handleSubmit}>
 
         <div className="relative">
@@ -173,12 +173,12 @@ const AddEvent = () => {
 
         <div className="text-center">
           <motion.button type="submit"
-          whileHover={{
-            scale: 1.1,
-            textShadow: "0px 0px 8px #000",
-            boxShadow: "0px 0px 8px #000"
-        }}
-          className="btn w-3/4 mb-3 mr-3 text-white bg-gradient-to-br mt-5 from-blue-500 to-purple-500 hover:from-purple-600 hover:to-blue-600  ">
+            whileHover={{
+              scale: 1.1,
+              textShadow: "0px 0px 8px #000",
+              boxShadow: "0px 0px 8px #000"
+            }}
+            className="btn w-3/4 mb-3 mr-3 text-white bg-gradient-to-br mt-5 from-blue-500 to-purple-500 hover:from-purple-600 hover:to-blue-600  ">
             Submit
           </motion.button>
         </div>

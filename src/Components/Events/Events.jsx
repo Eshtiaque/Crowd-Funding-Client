@@ -15,7 +15,7 @@ const Events = () => {
     const [searchText, setSearchText] = useState("");
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch("https://crowdfunding-gamma.vercel.app/event")
+        fetch("http://localhost:5000/event")
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -37,8 +37,8 @@ const Events = () => {
 
     //bg-gradient-to-r from-neutral-600 from-10% via- via-50% to-neutral-600 to-90%
 
-const handleSearch = () => {
-        fetch(`https://crowdfunding-gamma.vercel.app/searchText/${searchText}`)
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/searchText/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -76,18 +76,18 @@ const handleSearch = () => {
                 >
                     {/* <h2 className="text-3xl font-bold text-white ">Our All Events</h2>
                     <hr className="border-b-[3px] w-[106px] mt-1 mb-5 border-[#F99F24] mx-auto" /> */}
-               <MainTitle heading="Our All Events"></MainTitle>
+                    <MainTitle heading="Our All Events"></MainTitle>
 
-              
-               <div className="search-box  text-center">
-                <input
-                    onChange={(e) => setSearchText(e.target.value)}
-                    type="text"
-                    className="ps-3 p-1 m-2 mt-5 rounded-lg bg-gray-300 text-black"
-                    placeholder="Search event "
-                />{" "}
-                <button onClick={handleSearch} className="btn btn-sm items-center  bg-gradient-to-br from-blue-600 to-purple-600 text-white m-4 hover:from-purple-600 hover:to-blue-600">Search</button>
-            </div>
+
+                    <div className="search-box  text-center">
+                        <input
+                            onChange={(e) => setSearchText(e.target.value)}
+                            type="text"
+                            className="ps-3 p-1 m-2 mt-5 rounded-lg bg-gray-300 text-black"
+                            placeholder="Search event "
+                        />{" "}
+                        <button onClick={handleSearch} className="btn btn-sm items-center  bg-gradient-to-br from-blue-600 to-purple-600 text-white m-4 hover:from-purple-600 hover:to-blue-600">Search</button>
+                    </div>
                 </motion.div>
             </div>
             <div className="card-72 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:p-2 md:p-2  gap-2 p-5" >

@@ -1,11 +1,9 @@
-import bg from "../../assets/img/section-banner/contact-banner.webp";
 import background from "../../assets/img/section-banner/about.webp";
 import { FaPhoneAlt, FaEnvelope, FaLocationArrow } from 'react-icons/fa';
 import SharedBanner from "./SharedBanner";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
-import { Link } from "react-router-dom";
 
 
 const Contact = () => {
@@ -68,14 +66,13 @@ const Contact = () => {
                             </div>
                             <div className="flex items-center gap-3 mt-2">
                                 <FaEnvelope />
-                                <p>+88 00 000 000</p>
 
 
                                 <p>abcd@gmail.com</p>
                             </div>
                             <div className="flex items-center gap-3 mt-2">
                                 <FaLocationArrow />
-                                <p>712, Free school street, London</p>
+                                <p>Mirpur, Dhaka 1216</p>
                             </div>
                             <div className='flex gap-5 text-white text-3xl mt-10 cursor-pointer'>
                                 <FaFacebook className="hover:text-[#1877F2]" />

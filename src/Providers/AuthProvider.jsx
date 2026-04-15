@@ -21,7 +21,8 @@ const signIn =(email,password)=>{
     return signInWithEmailAndPassword(auth,email,password)
 }
 const googleSignIn = () => {
-    return signInWithPopup(auth, GoogleAuthProvider)
+    const provider = new GoogleAuthProvider(); 
+    return signInWithPopup(auth, provider);
 }
 const logOut = () => {
     return signOut(auth);

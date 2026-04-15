@@ -1,4 +1,4 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SingleBlog from "./SingleBlog";
 
 const AllBlogs = () => {
@@ -6,8 +6,8 @@ const AllBlogs = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-      
-        fetch("https://crowdfunding-gamma.vercel.app/allSocialPost")
+
+        fetch("http://localhost:5000/allSocialPost")
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -15,7 +15,7 @@ const AllBlogs = () => {
             })
     }, [])
     const handleSearch = () => {
-        fetch(`https://crowdfunding-gamma.vercel.app/searchText/${searchText}`)
+        fetch(`http://localhost:5000/searchText/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -39,10 +39,10 @@ const AllBlogs = () => {
 
                 {
                     items?.map(item => <>
-                            <SingleBlog
-                                key={item._id}
-                                item={item}
-                            ></SingleBlog>
+                        <SingleBlog
+                            key={item._id}
+                            item={item}
+                        ></SingleBlog>
                     </>
 
                     )

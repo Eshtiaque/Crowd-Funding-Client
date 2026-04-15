@@ -22,7 +22,7 @@ const Info = () => {
     const ideas = form.ideas.value;
 
     const saveUser = { name, email, phone, address, country, money, ideas, types, status: 'pending' };
-    fetch('https://crowdfunding-gamma.vercel.app/blogs', {
+    fetch('http://localhost:5000/blogs', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(saveUser)
@@ -41,22 +41,22 @@ const Info = () => {
     <div className="bg-gradient-to-bl from-gray-700 via-gray-900 to-black 
     max-w-7xl mx-auto pb-8">
       <div className="max-w-7xl mx-auto">
-      <SharedBanner
-        background={campaignPhoto}
-        title="Projects"
-        titleHead="Submit your project details"
-        titleDes={
-          <>
-            We will help you to start a new project or to collect funds for disasters.
-          </>
-        } />
+        <SharedBanner
+          background={campaignPhoto}
+          title="Projects"
+          titleHead="Submit your project details"
+          titleDes={
+            <>
+              We will help you to start a new project or to collect funds for disasters.
+            </>
+          } />
       </div>
-      
-       <div className="text-center mt-8">
+
+      <div className="text-center mt-8">
         <h2 className="text-3xl text-white font-bold">Submit Detail</h2>
         <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
       </div>
-      
+
       <form className="card card-compact shadow-2xl p-10 max-w-7xl mx-auto w-11/12 text-base leading-6 space-y-6 sm:text-lg sm:leading-7 overflow-hidden mb-16 mt-8 bg-white" onSubmit={handleSubmit}>
 
         <div className="relative">
@@ -181,12 +181,12 @@ const Info = () => {
 
         <div className="text-center">
           <motion.button type="submit"
-          whileHover={{
-            scale: 1.1,
-            textShadow: "0px 0px 8px #000",
-            boxShadow: "0px 0px 8px #000"
-        }}
-          className="btn w-3/4 mb-3 mr-3 text-white bg-gradient-to-br mt-5 from-blue-500 to-purple-500 hover:from-purple-600 hover:to-blue-600  ">
+            whileHover={{
+              scale: 1.1,
+              textShadow: "0px 0px 8px #000",
+              boxShadow: "0px 0px 8px #000"
+            }}
+            className="btn w-3/4 mb-3 mr-3 text-white bg-gradient-to-br mt-5 from-blue-500 to-purple-500 hover:from-purple-600 hover:to-blue-600  ">
             Submit
           </motion.button>
         </div>

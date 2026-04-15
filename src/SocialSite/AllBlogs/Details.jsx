@@ -26,7 +26,7 @@ const Details = () => {
 
   const [, setPost] = useState([]);
   useEffect(() => {
-    fetch(`https://crowdfunding-gamma.vercel.app/mySocialPost/${user?.email}`)
+    fetch(`http://localhost:5000/mySocialPost/${user?.email}`)
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -58,7 +58,7 @@ const Details = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`https://crowdfunding-gamma.vercel.app/myPost/${id}`, {
+        fetch(`http://localhost:5000/myPost/${id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())
@@ -118,17 +118,17 @@ const Details = () => {
           </div>
 
           <div className='flex gap-7 mr-9 items-center justify-end '>
-            
 
 
-            
+
+
             <Link to="/">
-                <FaHome className="text-cyan-300  text-4xl p-1 " />
+              <FaHome className="text-cyan-300  text-4xl p-1 " />
 
-              </Link>
-         
+            </Link>
 
-           
+
+
             <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsShare className=" text-yellow-300  rounded p-1 text-3xl" /></button>
             <dialog id="my_modal_2" className="modal">
               <div className="modal-box bg-[#050816]">

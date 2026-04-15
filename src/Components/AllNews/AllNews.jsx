@@ -16,11 +16,11 @@ const AllNews = () => {
 
     const { user } = useContext(AuthContext);
     const [comment, setComment] = useState([]);
-    
+
     // const [, setLoading] = useState(true)
     useEffect(() => {
 
-        fetch("https://crowdfunding-gamma.vercel.app/allComments")
+        fetch("http://localhost:5000/allComments")
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -30,46 +30,46 @@ const AllNews = () => {
     }, [user])
 
 
-    const handleDelete =_id =>{
+    const handleDelete = _id => {
         console.log(_id);
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to recover it!",
-            textColor:'#0000',
+            textColor: '#0000',
             icon: 'warning',
-            iconColor:'red',
-            background:'black',
-            Color:'#545454',
+            iconColor: 'red',
+            background: 'black',
+            Color: '#545454',
             showCancelButton: true,
             confirmButtonColor: '#F40D0D',
             cancelButtonColor: '#gray',
             // cancelButtonAriaLabel:'white',
             confirmButtonText: 'Yes, delete it!',
-            confirmButtonTextColor:'black'
-            
-          }).then((result) => {
+            confirmButtonTextColor: 'black'
+
+        }).then((result) => {
             if (result.isConfirmed) {
-           
-            fetch(`https://crowdfunding-gamma.vercel.app/deleteComments/${_id}`,{
-                method:'DELETE'
-            })
-            .then(res=>res.json())
-            .then(data=>{
-                console.log(data);
-                if(data.deletedCount>0){
-                    Swal.fire(
-                            'Deleted!',
-                            'Your Comment has been deleted.',
-                            'success'
-                          )
-            const remaining =comment.filter(del=>del._id!==_id)
-            setComment(remaining);
-                }
-            })
+
+                fetch(`http://localhost:5000/deleteComments/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Comment has been deleted.',
+                                'success'
+                            )
+                            const remaining = comment.filter(del => del._id !== _id)
+                            setComment(remaining);
+                        }
+                    })
             }
-          })
+        })
     }
-    
+
     if (comment.length > 0) {
         console.log(comment);
     }
@@ -182,13 +182,13 @@ const AllNews = () => {
                     {/* user comments */}
                     <div className=" mt-5 mb-5 lg:text-left text-center  ">
                         {user &&
-                            comment?.slice(0,4).map(com =>
+                            comment?.slice(0, 4).map(com =>
                                 <div key={com} >
                                     <div className="grid grid-cols-2 ">
                                         <div className="flex items-center gap-3">
-                                            
-                                               <BiSolidMessageEdit className="text-4xl text-cyan-300 lg:block md:block hidden "/>
-                                            
+
+                                            <BiSolidMessageEdit className="text-4xl text-cyan-300 lg:block md:block hidden " />
+
                                             <p className="my-2 lg:pb-2 lg:p-0 md:p-0 px-5 text-md text-white ">{com.email}</p>
                                         </div>
                                         <div className="flex gap-3 my-2 justify-end pb-2">
@@ -203,14 +203,14 @@ const AllNews = () => {
                                                     <button>close</button>
                                                 </form>
                                             </dialog>
-                                            
-                                            <button onClick={()=>handleDelete(com._id)} className="text-xl text-red-400 mr-3"><AiFillDelete /></button>
+
+                                            <button onClick={() => handleDelete(com._id)} className="text-xl text-red-400 mr-3"><AiFillDelete /></button>
 
                                         </div>
                                     </div>
 
 
-                          <p className="bg-slate-800 p-3 rounded-lg mb-3 mt-3 ms-14 text-left w-72">{com.text}</p>
+                                    <p className="bg-slate-800 p-3 rounded-lg mb-3 mt-3 ms-14 text-left w-72">{com.text}</p>
 
 
                                 </div>)

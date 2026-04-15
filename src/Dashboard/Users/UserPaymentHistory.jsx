@@ -7,11 +7,11 @@ const UserPaymentHistory = () => {
     const [donations, setDonations] = useState([]);
 
     useEffect(() => {
-        fetch(`https://crowdfunding-gamma.vercel.app/payment/${user?.email}`)
+        fetch(`http://localhost:5000/payment/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setDonations(data);
-                
+
             });
     }, [user]);
 
@@ -25,10 +25,10 @@ const UserPaymentHistory = () => {
 
             <h1 className="md:text-3xl lg:text-4xl mt-5 w-full text-2xl lg:text-center md:text-center tfont-black text-[#130F49]">
                 My Donations
-                
+
 
             </h1>
-            <hr  className="border-slate-400 border-b-[3px] lg:w-[300px] mx-auto mt-3"/>
+            <hr className="border-slate-400 border-b-[3px] lg:w-[300px] mx-auto mt-3" />
 
             <div className="overflow-x-auto mt-12">
                 <table className="table p-4 bg-base-300 text-[#130F49]">

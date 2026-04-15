@@ -1,5 +1,5 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import {  useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import swal from 'sweetalert';
 import jsPDF from 'jspdf';
@@ -11,7 +11,7 @@ const CheckOut = ({ price, name }) => {
     const [cardError, setCardError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
     useEffect(() => {
-        fetch('https://crowdfunding-gamma.vercel.app/create-payment-intent', {
+        fetch('http://localhost:5000/create-payment-intent', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -73,7 +73,7 @@ const CheckOut = ({ price, name }) => {
         }
         if (paymentIntent?.status) {
 
-            fetch(`https://crowdfunding-gamma.vercel.app/payment/saveAddress/${id}`, {
+            fetch(`http://localhost:5000/payment/saveAddress/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'
@@ -111,7 +111,7 @@ const CheckOut = ({ price, name }) => {
         const doc = new jsPDF();
         let y = 10;
 
-        fetch(`https://crowdfunding-gamma.vercel.app/saveAddress/${id}`)
+        fetch(`http://localhost:5000/saveAddress/${id}`)
             .then(res => res.json())
             .then(result => {
                 console.log(result);
@@ -134,7 +134,7 @@ const CheckOut = ({ price, name }) => {
                 doc.text('Address:', 10, y);
                 doc.text(` ${result.address}`, 50, y);
                 y += 20;
-                
+
                 doc.text('Price:', 10, y);
                 doc.text(` ${result.price}`, 50, y);
                 y += 20;

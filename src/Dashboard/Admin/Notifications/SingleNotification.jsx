@@ -57,7 +57,7 @@ const SingleNotification = ({ item, index }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://crowdfunding-gamma.vercel.app/campaignsAdd/${item._id}`, {
+                fetch(`http://localhost:5000/campaignsAdd/${item._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

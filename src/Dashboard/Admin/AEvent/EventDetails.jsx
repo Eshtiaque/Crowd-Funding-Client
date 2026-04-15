@@ -10,7 +10,7 @@ const EventDetails = () => {
     const updatedStatus = data.status === 'pending' ? 'approved' : 'approved';
     const updatedData = { ...data, status: updatedStatus };
 
-    fetch(`https://crowdfunding-gamma.vercel.app/event/${id}`, {
+    fetch(`http://localhost:5000/event/${id}`, {
       method: "PATCH",
       headers: {
         'Content-Type': 'application/json',

@@ -17,7 +17,7 @@ const AllProject = () => {
   const fetchData = () => {
     setIsLoading(true);
     axios
-      .get("https://crowdfunding-gamma.vercel.app/blogsSearch")
+      .get("http://localhost:5000/blogsSearch")
       .then((result) => {
         setData(result.data);
         setIsLoading(false);
@@ -33,7 +33,7 @@ const AllProject = () => {
     e.preventDefault();
     const name = e.target.search.value;
     axios
-      .get(`https://crowdfunding-gamma.vercel.app/blogsSearch/${name}`)
+      .get(`http://localhost:5000/blogsSearch/${name}`)
       .then((result) => setData(result.data));
   };
 
@@ -46,7 +46,7 @@ const AllProject = () => {
       <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
         <h1 className="text-3xl lg:text-4xl md:text-3xl font-black text-[#130F49]">
           Project Requests: ({data?.data?.length})
-          <hr className="border-2 border-slate-300 mt-2"/>
+          <hr className="border-2 border-slate-300 mt-2" />
 
         </h1>
         <div className="form-control mt-1">

@@ -3,12 +3,7 @@ import Partners from "../Home/Partners/Partners";
 import background from "../../assets/img/section-banner/about-section.webp";
 // import sectionImage from "../../assets/img/section-banner/contact-banner.webp"
 import ocg from "../../assets/img/others img/ocg-saving-the-ocean-uXfYLTmF6fo-unsplash.webp";
-import sajid from "../../../src/assets/img/OurTeam/sajid.webp";
-import sakib from "../../../src/assets/img/OurTeam/sakib.webp";
-import mahdi from "../../../src/assets/img/OurTeam/mahdi.webp";
-import shahadat from "../../../src/assets/img/OurTeam/shahadat.webp";
-import saroar from "../../../src/assets/img/OurTeam/saroar.webp";
-import rasel from "../../../src/assets/img/OurTeam/rasel.webp";
+
 import { useRef, useEffect, useState } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
 import CountUp from "react-countup";
@@ -149,60 +144,8 @@ const AboutUs = () => {
                         <div></div>
                     </div>
                 </motion.section>
-                <motion.section className="mt-9"
-                    variants={{
-                        hidden: { opacity: 0, y: 75 },
-                        visible: { opacity: 1, y: 0 }
-                    }}
-                    initial="hidden"
-                    animate={mainControls}
-                    transition={{ duration: 0.9, delay: 1.5 }}
-
-                >
-                    <h1 className="text-center text-3xl font-bold pt-5 mb-3">Meet Our Team</h1>
-                    <hr className="h-1 w-[106px] mt-3 rounded-md bg-gradient-to-br from-blue-600 to-purple-600 mx-auto" />
-                    <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-1 gap-7 mt-7">
-                        <div className="md:hidden lg:block"></div>
-                        <div className=" bg-[#0a102b] rounded-md">
-                            <img className="" src={sajid} alt="" />
-                            <h2 className="text-xl font-bold text-center mt-4">Estiaque Ahmed</h2>
-                            <p className="text-md text-center mb-4">Developer</p>
-                        </div>
-                        <div className=" bg-[#0a102b] rounded-md">
-                            <img src={sakib} alt="" />
-                            <img src="" alt="" />
-                            <h2 className="text-xl font-bold text-center mt-4">Md. Sakib Mia</h2>
-                            <p className="text-md text-center mb-4">Developer</p>
-                        </div>
-                        <div className=" bg-[#0a102b] rounded-md">
-                            <img src={mahdi} alt="" />
-                            <img src="" alt="" />
-                            <h2 className="text-xl font-bold text-center mt-4">Mahdi Mortuza</h2>
-                            <p className="text-md text-center mb-4">Developer</p>
-                        </div>
-                        <div className=" bg-[#0a102b] rounded-md">
-                            <img src={shahadat} alt="" />
-                            <img src="" alt="" />
-                            <h2 className="text-xl font-bold text-center mt-4">Shahadat Hosan</h2>
-                            <p className="text-md text-center mb-4">Developer</p>
-                        </div>
-                        <div className="hidden lg:block md:hidden"></div>
-                        <div className="hidden lg:block md:hidden"></div>
-                        <div className="hidden lg:block md:hidden"></div>
-                        <div className=" bg-[#0a102b] rounded-md">
-                            <img src={saroar} alt="" />
-                            <img src="" alt="" />
-                            <h2 className="text-xl font-bold text-center mt-4">Saroar Jahan</h2>
-                            <p className="text-md text-center mb-4">Developer</p>
-                        </div>
-                        <div className=" bg-[#0a102b] rounded-md">
-                            <img src={rasel} alt="" />
-                            <img src="" alt="" />
-                            <h2 className="text-xl font-bold text-center mt-4">Md. Rasel Islam</h2>
-                            <p className="text-md text-center mb-4">Developer</p>
-                        </div>
-                    </div>
-                </motion.section>
+               
+   
                 <Partners></Partners>
             </div>
         </div>

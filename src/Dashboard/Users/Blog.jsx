@@ -13,7 +13,7 @@ const Blogs = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch(`https://crowdfunding-gamma.vercel.app/individualBLogs/${user?.email}`)
+        fetch(`http://localhost:5000/individualBLogs/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setProjects(data);
@@ -25,7 +25,7 @@ const Blogs = () => {
         e.preventDefault();
         const name = e.target.search.value;
         axios
-            .get(`https://crowdfunding-gamma.vercel.app//blogsSearch/${name}`)
+            .get(`http://localhost:5000//blogsSearch/${name}`)
             .then((result) => setProjects(result.data));
     };
 
@@ -47,7 +47,7 @@ const Blogs = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 setIsLoading(true);
-                fetch(`https://crowdfunding-gamma.vercel.app/individualBLog/delete/${_id}`, {
+                fetch(`http://localhost:5000/individualBLog/delete/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -72,7 +72,7 @@ const Blogs = () => {
             <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
                 <h1 className="text-3xl md:text-3xl text-[#130F49] font-black">
                     Project Requests: ({projects.length})
-                    <hr className="border-2 border-slate-300 mt-2"/>
+                    <hr className="border-2 border-slate-300 mt-2" />
 
                 </h1>
                 <div className="form-control mt-1">

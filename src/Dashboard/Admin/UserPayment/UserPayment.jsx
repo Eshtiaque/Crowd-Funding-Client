@@ -13,7 +13,7 @@ const UserPayment = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         const name = e.target.search.value;
-        axios.get(`https://crowdfunding-gamma.vercel.app/paymentHistory/${name}`)
+        axios.get(`http://localhost:5000/paymentHistory/${name}`)
             .then(result => {
                 setPayments(result.data.filter(payment => payment.transaction !== null && payment.transaction !== undefined));
             });
@@ -27,10 +27,10 @@ const UserPayment = () => {
             <div className="flex flex-col md:flex-row gap-6 md:items-center justify-between mt-5">
                 <h1 className="md:text-3xl lg:text-4xl text-xl font-black text-[#130F49]">
                     All Payments ( $ )
-                    <hr className="border-2 border-slate-300 mt-2"/>
+                    <hr className="border-2 border-slate-300 mt-2" />
 
                 </h1>
-                 <div className="form-control mt-1">
+                <div className="form-control mt-1">
                     <div >
                         <form className="input-group" onSubmit={handleSearch}>
                             <input

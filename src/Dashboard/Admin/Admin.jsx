@@ -60,7 +60,7 @@ const Admin = () => {
               />
             </svg>
           </div>
-          <h1 className="text-4xl font-black text-[#130F49]"><span className="te">$</span>1437</h1>
+          <h1 className="text-4xl font-black text-[#130F49]"><span className="te">$</span>1437000</h1>
         </div>
         <div className="bg-[#E3F9E0] text-2xl font-semibold py-5 rounded-bl-full flex flex-col gap-8 p-4">
           <div className="flex mx-1 items-center justify-between">
