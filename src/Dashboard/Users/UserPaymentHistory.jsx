@@ -7,7 +7,7 @@ const UserPaymentHistory = () => {
     const [donations, setDonations] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/payment/${user?.email}`)
+        fetch(`https://crowdfunding-gamma.vercel.app/payment/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setDonations(data);

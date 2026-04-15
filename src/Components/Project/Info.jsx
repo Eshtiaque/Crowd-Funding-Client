@@ -22,7 +22,7 @@ const Info = () => {
     const ideas = form.ideas.value;
 
     const saveUser = { name, email, phone, address, country, money, ideas, types, status: 'pending' };
-    fetch('http://localhost:5000/blogs', {
+    fetch('https://crowdfunding-gamma.vercel.app/blogs', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(saveUser)

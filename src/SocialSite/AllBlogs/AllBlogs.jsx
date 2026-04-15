@@ -7,7 +7,7 @@ const AllBlogs = () => {
 
     useEffect(() => {
 
-        fetch("http://localhost:5000/allSocialPost")
+        fetch("https://crowdfunding-gamma.vercel.app/allSocialPost")
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -15,7 +15,7 @@ const AllBlogs = () => {
             })
     }, [])
     const handleSearch = () => {
-        fetch(`http://localhost:5000/searchText/${searchText}`)
+        fetch(`https://crowdfunding-gamma.vercel.app/searchText/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

@@ -18,7 +18,7 @@ const EdiPost = () => {
     form.reset();
     console.log(data.name);
     const update = { date, email, blog, title, name };
-    fetch(`http://localhost:5000/allPost/${data?._id}`, {
+    fetch(`https://crowdfunding-gamma.vercel.app/allPost/${data?._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json"

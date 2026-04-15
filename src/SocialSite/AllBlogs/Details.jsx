@@ -26,7 +26,7 @@ const Details = () => {
 
   const [, setPost] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/mySocialPost/${user?.email}`)
+    fetch(`https://crowdfunding-gamma.vercel.app/mySocialPost/${user?.email}`)
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -58,7 +58,7 @@ const Details = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:5000/myPost/${id}`, {
+        fetch(`https://crowdfunding-gamma.vercel.app/myPost/${id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

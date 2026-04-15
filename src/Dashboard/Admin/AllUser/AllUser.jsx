@@ -10,7 +10,7 @@ const AllUsers = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const search = e.target.search.value;
-    axios.get(`http://localhost:5000/users/${search}`)
+    axios.get(`https://crowdfunding-gamma.vercel.app/users/${search}`)
       .then(result => setData(result));
   }
 
@@ -24,7 +24,7 @@ const AllUsers = () => {
       saveUser.role = 'admin';
     }
 
-    fetch(`http://localhost:5000/userAction/${id}`, {
+    fetch(`https://crowdfunding-gamma.vercel.app/userAction/${id}`, {
       method: "PATCH",
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const AllUsers = () => {
         console.log(result)
         if (result.modifiedCount > 0) {
           toast.success("modified successfully");
-          axios.get('http://localhost:5000/users')
+          axios.get('https://crowdfunding-gamma.vercel.app/users')
             .then(result => setData(result));
         }
       })

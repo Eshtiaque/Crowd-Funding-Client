@@ -15,7 +15,7 @@ const Events = () => {
     const [searchText, setSearchText] = useState("");
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/event")
+        fetch("https://crowdfunding-gamma.vercel.app/event")
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -38,7 +38,7 @@ const Events = () => {
     //bg-gradient-to-r from-neutral-600 from-10% via- via-50% to-neutral-600 to-90%
 
     const handleSearch = () => {
-        fetch(`http://localhost:5000/searchText/${searchText}`)
+        fetch(`https://crowdfunding-gamma.vercel.app/searchText/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

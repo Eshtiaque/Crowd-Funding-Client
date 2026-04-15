@@ -22,7 +22,7 @@ const SingleNotification = ({ item, index }) => {
                 // for posting an event  
 
 
-                fetch(`http://localhost:5000/campaigns`, {
+                fetch(`https://crowdfunding-gamma.vercel.app/campaigns`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -57,7 +57,7 @@ const SingleNotification = ({ item, index }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/campaignsAdd/${item._id}`, {
+                fetch(`https://crowdfunding-gamma.vercel.app/campaignsAdd/${item._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

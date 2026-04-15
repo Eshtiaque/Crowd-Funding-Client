@@ -13,7 +13,7 @@ const Blogs = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch(`http://localhost:5000/individualBLogs/${user?.email}`)
+        fetch(`https://crowdfunding-gamma.vercel.app/individualBLogs/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setProjects(data);
@@ -25,7 +25,7 @@ const Blogs = () => {
         e.preventDefault();
         const name = e.target.search.value;
         axios
-            .get(`http://localhost:5000//blogsSearch/${name}`)
+            .get(`https://crowdfunding-gamma.vercel.app//blogsSearch/${name}`)
             .then((result) => setProjects(result.data));
     };
 
@@ -47,7 +47,7 @@ const Blogs = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 setIsLoading(true);
-                fetch(`http://localhost:5000/individualBLog/delete/${_id}`, {
+                fetch(`https://crowdfunding-gamma.vercel.app/individualBLog/delete/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

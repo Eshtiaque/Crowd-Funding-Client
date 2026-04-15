@@ -20,7 +20,7 @@ const AllNews = () => {
     // const [, setLoading] = useState(true)
     useEffect(() => {
 
-        fetch("http://localhost:5000/allComments")
+        fetch("https://crowdfunding-gamma.vercel.app/allComments")
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -50,7 +50,7 @@ const AllNews = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/deleteComments/${_id}`, {
+                fetch(`https://crowdfunding-gamma.vercel.app/deleteComments/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

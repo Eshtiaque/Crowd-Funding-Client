@@ -11,7 +11,7 @@ const CheckOut = ({ price, name }) => {
     const [cardError, setCardError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://crowdfunding-gamma.vercel.app/create-payment-intent', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -73,7 +73,7 @@ const CheckOut = ({ price, name }) => {
         }
         if (paymentIntent?.status) {
 
-            fetch(`http://localhost:5000/payment/saveAddress/${id}`, {
+            fetch(`https://crowdfunding-gamma.vercel.app/payment/saveAddress/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'
@@ -111,7 +111,7 @@ const CheckOut = ({ price, name }) => {
         const doc = new jsPDF();
         let y = 10;
 
-        fetch(`http://localhost:5000/saveAddress/${id}`)
+        fetch(`https://crowdfunding-gamma.vercel.app/saveAddress/${id}`)
             .then(res => res.json())
             .then(result => {
                 console.log(result);

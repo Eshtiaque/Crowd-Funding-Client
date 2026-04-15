@@ -17,7 +17,7 @@ const AllProject = () => {
   const fetchData = () => {
     setIsLoading(true);
     axios
-      .get("http://localhost:5000/blogsSearch")
+      .get("https://crowdfunding-gamma.vercel.app/blogsSearch")
       .then((result) => {
         setData(result.data);
         setIsLoading(false);
@@ -33,7 +33,7 @@ const AllProject = () => {
     e.preventDefault();
     const name = e.target.search.value;
     axios
-      .get(`http://localhost:5000/blogsSearch/${name}`)
+      .get(`https://crowdfunding-gamma.vercel.app/blogsSearch/${name}`)
       .then((result) => setData(result.data));
   };
 

@@ -22,7 +22,7 @@ const AddEvent = () => {
     const publisher_name = form.publisher_name.value;
 
     const saveUser = { name, email, image, title, description, publish_date, publisher_image, publisher_name, status: 'pending' };
-    fetch('http://localhost:5000/eventAdd', {
+    fetch('https://crowdfunding-gamma.vercel.app/eventAdd', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(saveUser)

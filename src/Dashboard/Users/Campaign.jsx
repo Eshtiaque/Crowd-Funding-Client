@@ -18,7 +18,7 @@ const Campaign = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:5000/individualCampaign/${user?.email}`)
+        fetch(`https://crowdfunding-gamma.vercel.app/individualCampaign/${user?.email}`)
             .then(result => result.json())
             .then(data => {
                 setCampaigns(data)

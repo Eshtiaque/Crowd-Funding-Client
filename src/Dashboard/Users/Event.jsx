@@ -15,7 +15,7 @@ const Event = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:5000/individualEvent/${user?.email}`)
+        fetch(`https://crowdfunding-gamma.vercel.app/individualEvent/${user?.email}`)
             .then(result => result.json())
             .then(data => {
                 setevents(data)

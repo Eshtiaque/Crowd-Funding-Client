@@ -12,7 +12,7 @@ const ProjectDescription = () => {
     const saveUser = {
       status: "approved",
     }
-    fetch(`http://localhost:5000/blogsUpdate/${id}`, {
+    fetch(`https://crowdfunding-gamma.vercel.app/blogsUpdate/${id}`, {
       method: "PATCH",
       headers: {
         'Content-Type': 'application/json',

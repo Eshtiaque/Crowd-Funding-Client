@@ -72,7 +72,7 @@ const Router = createBrowserRouter([
       {
         path: "/donatePayment/:id",
         element: <Payment />,
-        loader: ({ params }) => fetch(`http://localhost:5000/saveAddress/${params.id}`),
+        loader: ({ params }) => fetch(`https://crowdfunding-gamma.vercel.app/saveAddress/${params.id}`),
       },
       {
         path: "/donate",
@@ -125,12 +125,12 @@ const Router = createBrowserRouter([
       {
         path: "editPost/:id",
         element: <EditPost></EditPost>,
-        loader: ({ params }) => fetch(`http://localhost:5000/editPost/${params.id}`)
+        loader: ({ params }) => fetch(`https://crowdfunding-gamma.vercel.app/editPost/${params.id}`)
       },
       {
         path: "details/:id",
         element: <Details></Details>,
-        loader: ({ params }) => fetch(`http://localhost:5000/allSocialPost/${params.id}`)
+        loader: ({ params }) => fetch(`https://crowdfunding-gamma.vercel.app/allSocialPost/${params.id}`)
       }
     ]
   },
@@ -151,54 +151,54 @@ const Router = createBrowserRouter([
       {
         path: "allProject",
         element: <AdminRoute><AllProject></AllProject></AdminRoute>,
-        loader: () => axios.get("http://localhost:5000/blogs"),
+        loader: () => axios.get("https://crowdfunding-gamma.vercel.app/blogs"),
       },
       {
         path: "allUser",
         element: <AdminRoute><AllUsers></AllUsers></AdminRoute>,
-        loader: () => axios.get("http://localhost:5000/users"),
+        loader: () => axios.get("https://crowdfunding-gamma.vercel.app/users"),
       },
       {
         path: "description/:id",
         element: <AdminRoute><ProjectDescription /></AdminRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`https://crowdfunding-gamma.vercel.app/blogs/${params.id}`)
       },
       {
         path: "aCampaign",
         element: <AdminRoute><ACampaign></ACampaign></AdminRoute>,
-        loader: () => fetch('http://localhost:5000/aCampaign'),
+        loader: () => fetch('https://crowdfunding-gamma.vercel.app/aCampaign'),
       },
       {
         path: "aCampaign/:id",
         element: <AdminRoute><CampaignDetails /></AdminRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/campaigns/${params.id}`),
+        loader: ({ params }) => fetch(`https://crowdfunding-gamma.vercel.app/campaigns/${params.id}`),
       },
       {
         path: "UserPayment",
         element: <AdminRoute><UserPayment></UserPayment></AdminRoute>,
-        loader: () => fetch("http://localhost:5000/paymentHistory"),
+        loader: () => fetch("https://crowdfunding-gamma.vercel.app/paymentHistory"),
 
       },
       {
         path: "aEvent",
         element: <AdminRoute><AEvent></AEvent></AdminRoute>,
-        loader: () => axios.get("http://localhost:5000/event")
+        loader: () => axios.get("https://crowdfunding-gamma.vercel.app/event")
 
       },
       {
         path: "event/:id",
         element: <AdminRoute><EventDetails /></AdminRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/event/${params.id}`)
+        loader: ({ params }) => fetch(`https://crowdfunding-gamma.vercel.app/event/${params.id}`)
       },
       {
         path: "blog",
         element: <AdminRoute><BlogNews></BlogNews> </AdminRoute>,
-        loader: () => axios.get("http://localhost:5000/blogs")
+        loader: () => axios.get("https://crowdfunding-gamma.vercel.app/blogs")
       },
       {
         path: "blog/:id",
         element: <AdminRoute><BlogDetails /></AdminRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
+        loader: ({ params }) => fetch(`https://crowdfunding-gamma.vercel.app/blogs/${params.id}`)
       },
       {
         path: "revenue",
@@ -224,7 +224,7 @@ const Router = createBrowserRouter([
       {
         path: "userAllCampaign/:id",
         element: <UserCampaignDetails></UserCampaignDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/campaignsAdd/${params.id}`)
+        loader: ({ params }) => fetch(`https://crowdfunding-gamma.vercel.app/campaignsAdd/${params.id}`)
       },
       {
         path: "userAllEvent",
@@ -237,7 +237,7 @@ const Router = createBrowserRouter([
       {
         path: "userAllEvent/:id",
         element: <PrivateRoute><UserEventDetails></UserEventDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/event/${params.id}`)
+        loader: ({ params }) => fetch(`https://crowdfunding-gamma.vercel.app/event/${params.id}`)
       },
       {
         path: "payment",

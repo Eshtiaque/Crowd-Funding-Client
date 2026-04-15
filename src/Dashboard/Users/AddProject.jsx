@@ -12,7 +12,7 @@ const AddBlog = () => {
     // } = useForm();
     // const onSubmit = (data) => {
     //     console.log(data);
-    //     fetch('http://localhost:5000/blogAdd ', {
+    //     fetch('https://crowdfunding-gamma.vercel.app/blogAdd ', {
     //         method: 'POST',
     //         headers: {
     //             'content-type': 'application/json'
@@ -33,45 +33,45 @@ const AddBlog = () => {
     return (
         <div>
             <h1 className="lg:mt-12 md:mt-12 mt-24 lg:p-0 md:p-0 p-2 text-[#130F49] font-black text-4xl uppercase italic">Start your project with submit proper information</h1>
-            <hr  className="border-slate-400 border-2 mt-3"/>
+            <hr className="border-slate-400 border-2 mt-3" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 mt-16 text-black">
-            {/* //two big card */}
-            <div>
-                <h2 className="uppercase text-xl my-6 text-center font-black text-[#130F49]">Start Your Project</h2>
-                <Link to="/form" className="card w-11/12 mx-auto md:w-96 bg-base-100 shadow-xl group">
-                    <figure><img src={project} alt="Shoes" className="group-hover:scale-105 hover:duration-500 duration-500" /></figure>
-                    <div className="card-body text-center">
-                        <h2 className="font-bold text-lg">
-                            Be an entrepreneur
-                        </h2>
-                        <p>Share your ideas and thought with us!</p>
-                        <div className="card-actions justify-center mt-4">
-                            <div className="badge badge-outline bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3">Ideas</div>
-                            <div className="badge badge-outline bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3">Responsibility</div>
-                            <div className="badge badge-outline bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3">Skills</div>
+                {/* //two big card */}
+                <div>
+                    <h2 className="uppercase text-xl my-6 text-center font-black text-[#130F49]">Start Your Project</h2>
+                    <Link to="/form" className="card w-11/12 mx-auto md:w-96 bg-base-100 shadow-xl group">
+                        <figure><img src={project} alt="Shoes" className="group-hover:scale-105 hover:duration-500 duration-500" /></figure>
+                        <div className="card-body text-center">
+                            <h2 className="font-bold text-lg">
+                                Be an entrepreneur
+                            </h2>
+                            <p>Share your ideas and thought with us!</p>
+                            <div className="card-actions justify-center mt-4">
+                                <div className="badge badge-outline bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3">Ideas</div>
+                                <div className="badge badge-outline bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3">Responsibility</div>
+                                <div className="badge badge-outline bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3">Skills</div>
+                            </div>
                         </div>
-                    </div>
-                </Link>
-            </div>
+                    </Link>
+                </div>
 
-            <div className="flex flex-col items-center">
-                <h2 className="uppercase font-black text-xl my-6 text-center text-[#130F49]">Get help now</h2>
-                <Link to="/form" className="card w-11/12 mx-auto md:w-96 bg-base-100 shadow-xl group">
-                    <figure><img src={help} alt="Shoes" className="group-hover:scale-105 hover:duration-500 duration-500" /></figure>
-                    <div className="card-body text-center">
-                        <h2 className="font-bold text-lg">
-                            Help disaster victims
-                        </h2>
-                        <p>Share details and let us help the mankind!</p>
-                        <div className="card-actions justify-center mt-4">
-                            <div className="badge badge-outline bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3">Disaster</div>
-                            <div className="badge badge-outline bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3">Help</div>
-                            <div className="badge badge-outline bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3">Mankind</div>
+                <div className="flex flex-col items-center">
+                    <h2 className="uppercase font-black text-xl my-6 text-center text-[#130F49]">Get help now</h2>
+                    <Link to="/form" className="card w-11/12 mx-auto md:w-96 bg-base-100 shadow-xl group">
+                        <figure><img src={help} alt="Shoes" className="group-hover:scale-105 hover:duration-500 duration-500" /></figure>
+                        <div className="card-body text-center">
+                            <h2 className="font-bold text-lg">
+                                Help disaster victims
+                            </h2>
+                            <p>Share details and let us help the mankind!</p>
+                            <div className="card-actions justify-center mt-4">
+                                <div className="badge badge-outline bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3">Disaster</div>
+                                <div className="badge badge-outline bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3">Help</div>
+                                <div className="badge badge-outline bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3">Mankind</div>
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
             </div>
-        </div>
         </div>
         // <div className="bg-black text-black">
         //     <div className="bg-gradient-to-r from-[#F99F24] to-[#3c3b3b] rounded p-2" >

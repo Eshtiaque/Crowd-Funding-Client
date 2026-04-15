@@ -9,7 +9,7 @@ const PaginatedData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get(`http://localhost:5000/campaigns?&page=${currentPage + 1}`);
+        const result = await axios.get(`https://crowdfunding-gamma.vercel.app/campaigns?&page=${currentPage + 1}`);
         setPages(result.data);
       } catch (error) {
         console.error("Error fetching data:", error);

@@ -14,9 +14,9 @@ const Footer = () => {
         const email = form.email.value
         const data = { email }
 
-        // fetch(`http://localhost:5000/campaigns`, {
+        // fetch(`https://crowdfunding-gamma.vercel.app/campaigns`, {
 
-        fetch('http://localhost:5000/subscribers', {
+        fetch('https://crowdfunding-gamma.vercel.app/subscribers', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

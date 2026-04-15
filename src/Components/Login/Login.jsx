@@ -34,8 +34,8 @@ const Login = () => {
 
                 const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email, role: "user" }
 
-                // Note: Use http://localhost:5000/users for local development
-                fetch('http://localhost:5000/users', {
+                // Note: Use https://crowdfunding-gamma.vercel.app/users for local development
+                fetch('https://crowdfunding-gamma.vercel.app/users', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
@@ -44,8 +44,8 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(() => {
-                        // Note: Use http://localhost:5000/jwt for local development
-                        fetch('http://localhost:5000/jwt', {
+                        // Note: Use https://crowdfunding-gamma.vercel.app/jwt for local development
+                        fetch('https://crowdfunding-gamma.vercel.app/jwt', {
                             method: "POST",
                             headers: {
                                 'Content-Type': 'application/json'
@@ -77,8 +77,8 @@ const Login = () => {
                 const user = result.user;
                 setSuccess('Login Successful');
 
-                // Note: Use http://localhost:5000/jwt for local development
-                fetch('http://localhost:5000/jwt', {
+                // Note: Use https://crowdfunding-gamma.vercel.app/jwt for local development
+                fetch('https://crowdfunding-gamma.vercel.app/jwt', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'

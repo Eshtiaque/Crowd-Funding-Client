@@ -22,7 +22,7 @@ const UserCampaignAdd = () => {
     const progress = form.progress.value;
 
     const saveUser = { name, email, img, itemHeader, desc, date, location, progress, status: 'pending' };
-    fetch('http://localhost:5000/campaignsAdd', {
+    fetch('https://crowdfunding-gamma.vercel.app/campaignsAdd', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(saveUser)
